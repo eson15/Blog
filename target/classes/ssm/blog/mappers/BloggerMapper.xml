@@ -8,7 +8,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="id" column="id"/>
 		<result property="username" column="username"/>
 		<result property="password" column="password"/>
+		<result property="profile" column="profile"/>
+		<result property="nickname" column="nickname"/>
+		<result property="sign" column="sign"/>
+		<result property="imagename" column="imagename"/>
 	</resultMap>
+	
+	<select id="getByUsername" parameterType="String" resultMap="BloggerResult">
+		select * from t_blogger where username=#{username}
+	</select>
 	
 	
 </mapper> 

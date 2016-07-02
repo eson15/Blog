@@ -67,7 +67,7 @@
 		<property name="filterChainDefinitions">
 			<value>
 				/login=anon
-				/admin*=authc
+				/admin/**=authc
 			</value>
 		</property>
 	</bean>
