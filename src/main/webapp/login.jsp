@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Java开源博客系统后台登录页面-Powered by java1234</title>
+<title>ssm博客系统</title>
 <script
 	src="${pageContext.request.contextPath}/static/bootstrap3/js/jquery-1.11.2.min.js"></script>
 <STYLE>

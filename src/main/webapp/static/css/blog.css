@@ -1,0 +1,101 @@
+.data_list{
+	border: 1px solid #E5E5E5;
+	padding: 10px;
+	background-color: #FDFDFD;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+.data_list .data_list_title{
+	font-size: 15px;
+	font-weight: bold;
+	border-bottom: 1px solid #E5E5E5;
+	padding-bottom: 10px;
+	padding-top: 5px;
+}
+
+.data_list .data_list_title img{
+	margin-top: 1px;
+	vertical-align: top;
+}
+
+.data_list .datas ul {
+	list-style-type: none;
+	padding-left: 15px;
+}
+
+.data_list .datas ul li {
+	margin-top: 10px;
+}
+
+.data_list .data_list_title .datas{
+	padding: 5px;
+}
+
+.datas .title {
+	display:block;
+	line-height: 1.5;
+	font-family: Verdana,Arial,Helvetica,sans-serif;
+	padding-bottom: 10px;
+	font:18px 'microsoft yahei';
+}
+
+
+.datas .title a{
+	color: #800040;	
+	border-bottom: 1px dashed #ddd;
+	margin: 0 10px;
+}
+
+.datas .summary{
+	display:block;
+	
+	line-height: 19.5px;
+	padding-top: 5px;
+	
+	color: #666;
+	font: 14px/24px 'microsoft yahei';
+	margin: -10px 0 10px 0;
+}
+
+.datas .img{
+	display:block;
+	clear:both;
+}
+
+.datas img{
+	padding:10px;
+	padding-left:0px;
+	max-height: 150px;
+	max-width:150px;
+}
+
+.datas .info{
+	display:block;
+	font-family: microsoft yahei, Verdana, Arial, Helvetica, sans-serif;
+	line-height: 18px;
+	float: right;
+	font-size: 12px;
+	color: #33a5ba;
+}
+
+.data_list .user_image{
+	text-align: center;
+}
+
+.data_list .user_image img{
+	padding-top:10px;
+	width: 200px;;
+	height: 250px;;
+}
+
+.data_list .nickName , .data_list .userSign{
+	text-align: center;
+	color: #666;
+	font: 14px/20px 'microsoft yahei';
+}
+
+.footer font{
+	font: 10px/20px 'microsoft yahei';
+	color: #666;
+}
