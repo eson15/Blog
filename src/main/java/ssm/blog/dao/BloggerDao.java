@@ -1,4 +1,4 @@
-package ssm.blog.dao;
+	package ssm.blog.dao;
 
 import ssm.blog.entity.Blogger;
 

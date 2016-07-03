@@ -26,8 +26,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
-				<img alt="ssm个人博客系统"
-					src="${pageContext.request.contextPath}/static/images/logo1.jpg">
+				<div class="blog"><strong>倪升武的博客</strong></div>
 			</div>
 			<div class="col-md-8">
 				<iframe style="float:right" width="420" scrolling="no" height="60" frameborder="0"
@@ -70,15 +69,8 @@
 					博主信息
 				</div>
 				<div class="user_image">
-					<!-- 
-					<img src="${pageContext.request.contextPath}/static/userImages/myhead.jpg"/>
-					 -->
 					<img src="${pageContext.request.contextPath}/static/userImages/${blogger.imagename}"/>
 				</div>
-				<!-- 
-				<div class="nickName">eson_15</div>
-				<div class="userSign">人之所能，是相信能！</div>
-				 -->
 				<div class="nickName">${blogger.nickname }</div>
 				<div class="userSign">${blogger.sign }</div>
 			</div>	
@@ -125,13 +117,9 @@
 				</div>
 				<div class="datas">
 					<ul>						
-							<li><span><a href="http://blog.csdn.net/eson_15" target="_blank">CSDN博客</a></span></li>						
-							<li><span><a href="https://github.com/eson15" target="_blank">GitHub主页</a></span></li>						
-							<li><span><a href="http://geek.csdn.net/" target="_blank">极客头条</a></span></li>						
-							<li><span><a href="http://www.114la.com/other/rgb.htm" target="_blank">RGB颜色查询表</a></span></li>	
-							<c:forEach items="${linkList }" var="link">
-								<li><span><a href="${link.linkurl }" target="_blank">${link.linkname }</a></span></li>
-							</c:forEach>											
+						<c:forEach items="${linkList }" var="link">
+							<li><span><a href="${link.linkurl }" target="_blank">${link.linkname }</a></span></li>
+						</c:forEach>											
 					</ul>
 				</div>
 			</div>
@@ -155,9 +143,9 @@
 						  	<span class="summary">摘要: 这是用来测试的静态数据，为了多搞一点数据，于是我开始喋喋不休的说一些废话，包括我很帅之类的，虽然我一直强调自己要低调，但不知为何，自己的容颜非得和内心背道而驰....</span>
 						  	<span class="img">
 						  		
-							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="1466217432889087570.jpg" alt="QQ鎴浘20160618103440.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
-							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="1466217432889087570.jpg" alt="QQ鎴浘20160618103440.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
-							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="1466217432889087570.jpg" alt="QQ鎴浘20160618103440.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
+							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="dog" alt="dog.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
+							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="dog" alt="dog.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
+							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="dog" alt="dog.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
 							  		&nbsp;&nbsp;
 						  		
 						  	</span>
@@ -177,9 +165,9 @@
 						  	<span class="summary">摘要: 这是用来测试的静态数据，为了多搞一点数据，于是我开始喋喋不休的说一些废话，包括我很帅之类的，虽然我一直强调自己要低调，但不知为何，自己的容颜非得和内心背道而驰....</span>
 						  	<span class="img">
 						  		
-							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="1466217432889087570.jpg" alt="QQ鎴浘20160618103440.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
-							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="1466217432889087570.jpg" alt="QQ鎴浘20160618103440.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
-							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="1466217432889087570.jpg" alt="QQ鎴浘20160618103440.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
+							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="dog.jpg" alt="dog.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
+							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="dog.jpg" alt="dog.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
+							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="dog.jpg" alt="dog.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
 							  		&nbsp;&nbsp;
 						  		
 						  	</span>
@@ -199,9 +187,9 @@
 						  	<span class="summary">摘要: 这是用来测试的静态数据，为了多搞一点数据，于是我开始喋喋不休的说一些废话，包括我很帅之类的，虽然我一直强调自己要低调，但不知为何，自己的容颜非得和内心背道而驰....</span>
 						  	<span class="img">
 						  		
-							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="1466217432889087570.jpg" alt="QQ鎴浘20160618103440.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
-							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="1466217432889087570.jpg" alt="QQ鎴浘20160618103440.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
-							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="1466217432889087570.jpg" alt="QQ鎴浘20160618103440.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
+							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="dog.jpg" alt="dog.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
+							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="dog.jpg" alt="dog.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
+							  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="dog.jpg" alt="dog.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
 							  		&nbsp;&nbsp;
 						  		
 						  	</span>
