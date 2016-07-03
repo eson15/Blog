@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="ssm.blog.dao.BloggerDao">
 
 	<resultMap type="Blogger" id="BloggerResult">
-		<result property="id" column="id"/>
+		<id property="id" column="id"/>
 		<result property="username" column="username"/>
 		<result property="password" column="password"/>
 		<result property="profile" column="profile"/>
@@ -15,7 +15,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 	
 	<select id="getByUsername" parameterType="String" resultMap="BloggerResult">
-		select * from t_blogger where username=#{username}
+		SELECT * FROM t_blogger WHERE username=#{username}
+	</select>
+	
+	<select id="getBloggerData" resultMap="BloggerResult">
+		SELECT * FROM t_blogger WHERE id=1
 	</select>
 	
 	

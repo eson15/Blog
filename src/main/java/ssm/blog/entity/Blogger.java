@@ -1,5 +1,6 @@
 package ssm.blog.entity;
 
+
 /**
  * @Description ²©Ö÷ÊµÌå
  * @author Ni Shengwu
@@ -58,5 +59,5 @@ public class Blogger {
 	public void setImagename(String imagename) {
 		this.imagename = imagename;
 	}
-	
+
 }

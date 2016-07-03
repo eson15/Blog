@@ -19,8 +19,14 @@ public class BloggerServiceImpl implements BloggerService {
 	@Resource
 	private BloggerDao bloggerDao;
 	
+	//根据用户名查询博主信息，用于登陆
 	public Blogger getByUsername(String username) {
 		return bloggerDao.getByUsername(username);
+	}
+
+	//获取博主信息
+	public Blogger getBloggerData() {
+		return bloggerDao.getBloggerData();
 	}
 
 }

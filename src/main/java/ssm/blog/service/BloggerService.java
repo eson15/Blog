@@ -11,4 +11,5 @@ public interface BloggerService {
 	
 	public Blogger getByUsername(String username);
 
+	public Blogger getBloggerData();
 }

@@ -16,7 +16,7 @@
         http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
 	<!-- 自动扫描包中的bean -->
-	<context:component-scan base-package="ssm.blog.service" />
+	<context:component-scan base-package="ssm.blog.*" />
 
 	<!-- 配置数据源，使用阿里巴巴连接池Druid -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">

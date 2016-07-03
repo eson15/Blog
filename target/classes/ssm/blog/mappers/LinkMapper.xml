@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ssm.blog.dao.LinkDao">
+
+	<resultMap type="Link" id="LinkResult">
+		<id property="id" column="id"/>
+		<result property="linkname" column="linkname"/>
+		<result property="linkurl" column="linkurl"/>
+		<result property="linkorder" column="linkorder"/>
+	</resultMap>
+	
+	
+	<select id="getLinkData" resultMap="LinkResult">
+		SELECT * FROM t_link ORDER BY linkorder
+	</select>
+	
+	
+</mapper> 

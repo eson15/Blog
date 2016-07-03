@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -15,6 +17,7 @@
 		padding-top:10px;
 		padding-bottom:40px;
 		background-color: #F8F8FF;
+		font-family: microsoft yahei;
 	}
 </style>
 </head>
@@ -40,13 +43,12 @@
 				    <!-- Collect the nav links, forms, and other content for toggling -->
 				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				      <ul class="nav navbar-nav">
-				      	<li><a class="navbar-brand" href="#"><strong>博客首页</strong></a></li>
-				        <li><a class="navbar-brand" href="#"><strong>关于博主</strong></a></li>
-				        <li><a class="navbar-brand" href="#"><strong>我的相册</strong></a></li>
-				        <li><a class="navbar-brand" href="#"><strong>兴趣爱好</strong></a></li>
-				        <li><a class="navbar-brand" href="#"><strong>资源小站</strong></a></li>
-				        <li><a class="navbar-brand" href="#"><strong>程序人生</strong></a></li>
-				        <li><a class="navbar-brand" href="#"><strong>CSDN</strong></a></li>
+				      	<li class="active"><a class="navbar-brand" href="#">博客首页</a></li>
+				        <li><a class="navbar-brand" href="#">关于博主</a></li>
+				        <li><a class="navbar-brand" href="#">我的相册</a></li>
+				        <li><a class="navbar-brand" href="#">资源小站</a></li>
+				        <li><a class="navbar-brand" href="#">程序人生</a></li>
+				        <li><a class="navbar-brand" href="#">CSDN</a></li>
 				      </ul>
 				      <form class="navbar-form navbar-right" role="search">
 				        <div class="form-group">
@@ -68,10 +70,17 @@
 					博主信息
 				</div>
 				<div class="user_image">
-					<img src="${pageContext.request.contextPath}/static/userImages/head.jpg"/>
+					<!-- 
+					<img src="${pageContext.request.contextPath}/static/userImages/myhead.jpg"/>
+					 -->
+					<img src="${pageContext.request.contextPath}/static/userImages/${blogger.imagename}"/>
 				</div>
+				<!-- 
 				<div class="nickName">eson_15</div>
 				<div class="userSign">人之所能，是相信能！</div>
+				 -->
+				<div class="nickName">${blogger.nickname }</div>
+				<div class="userSign">${blogger.sign }</div>
 			</div>	
 			
 			<div class="data_list">
@@ -119,7 +128,10 @@
 							<li><span><a href="http://blog.csdn.net/eson_15" target="_blank">CSDN博客</a></span></li>						
 							<li><span><a href="https://github.com/eson15" target="_blank">GitHub主页</a></span></li>						
 							<li><span><a href="http://geek.csdn.net/" target="_blank">极客头条</a></span></li>						
-							<li><span><a href="http://www.114la.com/other/rgb.htm" target="_blank">RGB颜色查询表</a></span></li>												
+							<li><span><a href="http://www.114la.com/other/rgb.htm" target="_blank">RGB颜色查询表</a></span></li>	
+							<c:forEach items="${linkList }" var="link">
+								<li><span><a href="${link.linkurl }" target="_blank">${link.linkname }</a></span></li>
+							</c:forEach>											
 					</ul>
 				</div>
 			</div>
@@ -130,7 +142,7 @@
 		  <div class="col-md-9">
 		  	<div class="data_list">
 		  		<div class="data_list_title">
-					<img src="${pageContext.request.contextPath}/static/images/list_icon.png"/>最新博客
+					<img src="${pageContext.request.contextPath}/static/images/list_icon.png"/>&nbsp;最新博客
 				</div>	
 				<div class="datas">
 					<ul>

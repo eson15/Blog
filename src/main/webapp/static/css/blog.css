@@ -1,3 +1,7 @@
+.list a{
+	color: #8B2252;
+}
+
 .data_list{
 	border: 1px solid #E5E5E5;
 	padding: 10px;
@@ -48,13 +52,11 @@
 }
 
 .datas .summary{
-	display:block;
-	
+	display:block;	
 	line-height: 19.5px;
 	padding-top: 5px;
-	
 	color: #666;
-	font: 14px/24px 'microsoft yahei';
+	font-size: 14px;
 	margin: -10px 0 10px 0;
 }
 
@@ -92,10 +94,10 @@
 .data_list .nickName , .data_list .userSign{
 	text-align: center;
 	color: #666;
-	font: 14px/20px 'microsoft yahei';
+	font-size: 14px;
 }
 
 .footer font{
-	font: 10px/20px 'microsoft yahei';
+	font-size: 10px;
 	color: #666;
 }
