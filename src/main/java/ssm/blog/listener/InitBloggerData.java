@@ -51,8 +51,8 @@ public class InitBloggerData implements ServletContextListener, ApplicationConte
 		
 		//同上，获取博客信息，按照时间分类的
 		BlogService blogService = (BlogService) applicationContext.getBean("blogService");
-		List<Blog> blogList = blogService.getBlogData();
-		application.setAttribute("blogList", blogList);
+		List<Blog> blogTimeList = blogService.getBlogData();
+		application.setAttribute("blogTimeList", blogTimeList);
 	}
 
 	public void contextDestroyed(ServletContextEvent sce) {

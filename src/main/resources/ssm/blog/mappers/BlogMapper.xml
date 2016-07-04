@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="content" column="content"/>
 		<result property="keyWord" column="keyWord"/>
 		
-		<association property="blogType" column="type_id" select="ssm.blog.dao.BlogTypeDao.getBlogTypeData">
+		<association property="blogType" column="type_id" select="ssm.blog.dao.BlogTypeDao.findById">
 		</association>
 	</resultMap>
 	
@@ -27,6 +27,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		    t_blog 
 		  GROUP BY DATE_FORMAT(releaseDate,'%Y年%m月')
 		  ORDER BY releaseDate DESC
+	</select>
+	
+	<select id="listBlog" parameterType="Map" resultMap="BlogResult">
+		 SELECT * FROM t_blog ORDER BY releaseDate DESC
+		 <if test="start!=null and pageSize!=null">
+		 	limit #{start},#{pageSize}
+		 </if>
+	</select>
+	
+	<select id="getTotal" parameterType="Map" resultType="Long">
+		SELECT COUNT(*) FROM t_blog
 	</select>
 	
 </mapper> 

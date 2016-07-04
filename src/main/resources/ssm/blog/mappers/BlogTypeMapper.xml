@@ -24,5 +24,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		ORDER BY t2.orderNum 
 	</select>
 	
-	
+	<select id="findById" parameterType="Integer" resultMap="BlogTypeResult">
+		SELECT * FROM t_blogtype WHERE id=#{id}
+	</select>
+	 
 </mapper> 
