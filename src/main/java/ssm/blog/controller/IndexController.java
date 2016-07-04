@@ -43,7 +43,7 @@ public class IndexController {
 			page = "1";
 		}
 		//获取分页的bean
-		PageBean pageBean = new PageBean(Integer.parseInt(page), 5);
+		PageBean pageBean = new PageBean(Integer.parseInt(page), 6);
 		
 		//map中封装起始页和每页的记录
 		Map<String, Object> map = new HashMap<String, Object>();
