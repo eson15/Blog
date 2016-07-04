@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ssm.blog.dao.BlogTypeDao">
+
+	<resultMap type="BlogType" id="BlogTypeResult">
+		<id property="id" column="id"/>
+		<result property="typeName" column="typeName"/>
+		<result property="orderNum" column="orderNum"/>
+		<result property="blogCount" column="blogCount"/>
+	</resultMap>
+	
+	
+	<select id="getBlogTypeData" resultMap="BlogTypeResult">
+		SELECT 
+		  t2.typeName,
+		  COUNT(t1.id) AS blogCount 
+		FROM
+		  t_blog t1 
+		  RIGHT JOIN t_blogtype t2 
+		ON t1.type_id = t2.id 
+		GROUP BY t2.typeName 
+		ORDER BY t2.orderNum 
+	</select>
+	
+	
+</mapper> 

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ssm.blog.dao.BlogDao">
+
+	<resultMap type="Blog" id="BlogResult">
+		<id property="id" column="id"/>
+		<result property="title" column="title"/>
+		<result property="summary" column="summary"/>
+		<result property="releaseDate" column="releaseDate"/>
+		<result property="clickHit" column="clickHit"/>
+		<result property="replyHit" column="replyHit"/>
+		<result property="content" column="content"/>
+		<result property="keyWord" column="keyWord"/>
+		
+		<association property="blogType" column="type_id" select="ssm.blog.dao.BlogTypeDao.getBlogTypeData">
+		</association>
+	</resultMap>
+	
+	
+	<select id="getBlogData" resultMap="BlogResult">
+		  SELECT 
+		    DATE_FORMAT(releaseDate,'%Y年%m月') AS releaseDateStr,
+		    COUNT(*) AS blogCount
+		  FROM
+		    t_blog 
+		  GROUP BY DATE_FORMAT(releaseDate,'%Y年%m月')
+		  ORDER BY releaseDate DESC
+	</select>
+	
+</mapper> 

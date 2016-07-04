@@ -82,13 +82,9 @@
 				</div>
 				<div class="datas">
 					<ul>						
-							<li><span><a href="#">Java核心基础(33)</a></span></li>						
-							<li><span><a href="#">Mysql(1)</a></span></li>						
-							<li><span><a href="#">Spring(5)</a></span></li>						
-							<li><span><a href="#">Hibernate(1)</a></span></li>						
-							<li><span><a href="#">Struts2(1)</a></span></li>						
-							<li><span><a href="#">MyBatis(1)</a></span></li>						
-							<li><span><a href="#">maven(1)</a></span></li>						
+							<c:forEach items="${blogTypeList }" var="blogType">
+								<li><span><a href="#">${blogType.typeName }（${blogType.blogCount }）</a></span></li>		
+							</c:forEach>					
 					</ul>
 				</div>
 			</div>
@@ -100,12 +96,9 @@
 				</div>
 				<div class="datas">
 					<ul>						
-							<li><span><a href="#">2016年06月(36)</a></span></li>						
-							<li><span><a href="#">2016年05月(10)</a></span></li>						
-							<li><span><a href="#">2016年04月(19)</a></span></li>						
-							<li><span><a href="#">2016年03月(14)</a></span></li>					
-							<li><span><a href="#">2016年02月(23)</a></span></li>						
-							<li><span><a href="#">2016年01月(1)</a></span></li>						
+							<c:forEach items="${blogList }" var="blog">							
+								<li><span><a href="#">${blog.releaseDateStr }（${blog.blogCount }）</a></span></li>						
+							</c:forEach>						
 					</ul>
 				</div>
 			</div>
