@@ -11,6 +11,13 @@
 <script src="${pageContext.request.contextPath}/static/bootstrap3/js/jquery-1.11.2.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/bootstrap3/js/bootstrap.min.js"></script>
 <title>${title }</title>
+<script type="text/javascript">
+	function changeClass(obj) {
+		var li = obj.parentNode; //获取父节点
+		alert(li);
+		li.className = "active";
+	}
+</script>
 <style type="text/css">
 	body{
 		padding-top:60px;
@@ -34,7 +41,7 @@
 				
 		<div class="row">		  	  
 			  <div class="col-md-9">
-				  <jsp:include page="${blogListPage }"/>
+				  <jsp:include page="${commonPage }"/>
 			  </div>	
 			  <div class="col-md-3">		  	
 				  <jsp:include page="/foreground/blog/rightList.jsp"/>		  	

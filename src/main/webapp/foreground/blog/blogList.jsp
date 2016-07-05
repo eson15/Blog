@@ -15,16 +15,13 @@
 					  		<a href="#">${blog.title }</a>
 					  	</span>
 					  	<span class="summary">摘要: ${blog.summary }....</span>
-					  	<!-- 
 					  	<span class="img">
-					  		
-						  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="dog.jpg" alt="dog.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
-						  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="dog.jpg" alt="dog.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
-						  		<a href="#"><img src="${pageContext.request.contextPath}/static/userImages/dog.jpg" title="dog.jpg" alt="dog.jpg" width="823" height="489" style="width: 823px; height: 489px;"></a>
-						  		&nbsp;&nbsp;
-					  		
+					  		<c:forEach items="${blog.imageList }" var="image">
+					  			<a href="#">${image }</a>
+					  			&nbsp;&nbsp;
+					  		</c:forEach>
+	
 					  	</span>
-					  	 -->
 					  	<span class="info">
 					  		<font color="#999"><fmt:formatDate value="${blog.releaseDate }" type="date" pattern="yyyy-MM-dd HH:mm"/></font> &nbsp;&nbsp;
 					  		<font color="#33a5ba"><a href="#">阅读</a><font color="#999">(${blog.clickHit })</font>&nbsp;&nbsp;</font>

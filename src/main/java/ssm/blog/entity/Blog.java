@@ -1,6 +1,8 @@
 package ssm.blog.entity;
 
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @Description 博客实体
@@ -21,6 +23,8 @@ public class Blog {
 	private BlogType blogType; //博客类型
 	private Integer blogCount; //博客数量，非博客实际属性，用于根据发布日期归档查询
 	private String releaseDateStr; //发布日期的字符串，只取年月
+	
+	private List<String> imageList = new LinkedList<String>();//博客里存的图片，主要用于展示缩略图
 
 	public Integer getId() {
 		return id;
@@ -108,6 +112,14 @@ public class Blog {
 
 	public void setReleaseDateStr(String releaseDateStr) {
 		this.releaseDateStr = releaseDateStr;
+	}
+
+	public List<String> getImageList() {
+		return imageList;
+	}
+
+	public void setImageList(List<String> imageList) {
+		this.imageList = imageList;
 	}
 	
 }

@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="getBlogTypeData" resultMap="BlogTypeResult">
 		SELECT 
-		  t2.typeName,
+		  t2.*,
 		  COUNT(t1.id) AS blogCount 
 		FROM
 		  t_blog t1 

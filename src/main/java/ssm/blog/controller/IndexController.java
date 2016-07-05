@@ -7,6 +7,10 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -37,6 +41,8 @@ public class IndexController {
 	@RequestMapping("/index")
 	public ModelAndView index(
 			@RequestParam(value = "page", required = false) String page,
+			@RequestParam(value = "typeId", required = false) String typeId,
+			@RequestParam(value = "releaseDateStr", required = false) String releaseDateStr,
 			HttpServletRequest request) throws Exception {
 
 		ModelAndView modelAndView = new ModelAndView();
@@ -51,21 +57,44 @@ public class IndexController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("start", pageBean.getStart());
 		map.put("pageSize", pageBean.getPageSize());
+		map.put("typeId", typeId);
+		map.put("releaseDateStr", releaseDateStr);
 
 		// 获取博客信息
-		List<Blog> blogList = blogService.listBlog(map);
-		modelAndView.addObject("blogList", blogList);
-		modelAndView.addObject("blogListPage", "foreground/blog/blogList.jsp");
-		modelAndView.addObject("title", "博客主页");
-		modelAndView.setViewName("mainTemp");
+		List<Blog> blogList = blogService.listBlog(map);		
 
+		for(Blog blog : blogList) {
+			List<String> imageList = blog.getImageList();
+			String blogInfo = blog.getContent(); //获取博客内容
+			Document doc = Jsoup.parse(blogInfo); //将博客内容(网页中也就是一些html)转为jsoup的Document
+			Elements jpgs = doc.select("img[src$=.jpg]");//获取<img>标签中所有后缀是.jpg的元素
+			for(int i = 0; i < jpgs.size(); i++) {
+				Element jpg = jpgs.get(i); //获取到单个元素
+				imageList.add(jpg.toString()); //把图片信息存到imageList中
+				if(i == 2)
+					break; //只存三张图片信息
+			}
+		}
+		
 		// 分页
 		StringBuffer param = new StringBuffer();
+		//拼接参数，主要对于点击文章分类或者日期分类后，查出来的分页，要拼接具体的参数
+		if(StringUtil.isNotEmpty(typeId)) {
+			param.append("typeId=" + typeId + "&");
+		}
+		if(StringUtil.isNotEmpty(releaseDateStr)) {
+			param.append("releaseDateStr=" + releaseDateStr + "&");
+		}
 		modelAndView.addObject("pageCode", PageUtil.genPagination(
 				request.getContextPath() + "/index.html", //还是请求该controller的index方法
 				blogService.getTotal(map), 
 				Integer.parseInt(page), 6,
 				param.toString()));
+		
+		modelAndView.addObject("blogList", blogList);
+		modelAndView.addObject("commonPage", "foreground/blog/blogList.jsp");
+		modelAndView.addObject("title", "博客主页 - 倪升武的博客");
+		modelAndView.setViewName("mainTemp");
 
 		return modelAndView;
 
