@@ -33,6 +33,14 @@
 					</li>
 					<hr style="height:5px;border:none;border-top:1px dashed gray;padding-bottom:10px;" />	
 				</c:forEach>																											
-			</ul>
-		</div>  		
+			</ul>			
+		</div>  
+		
+		<div style="text-align: center;">
+			<nav>
+			  <ul class="pagination">
+			    ${pageCode }
+			  </ul>
+			</nav>	
+		</div>			
 </div>
