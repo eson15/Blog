@@ -20,7 +20,7 @@
 }
 
 .data_list .data_list_title img{
-	margin-top: 1px;
+	margin-top: 3px;
 	vertical-align: top;
 }
 
@@ -84,6 +84,7 @@
 
 .data_list .user_image{
 	text-align: center;
+	padding-bottom: 20px;
 }
 
 .data_list .user_image img{
@@ -92,13 +93,29 @@
 	height: 250px;;
 }
 
-.data_list .nickName , .data_list .userSign{
+.data_list .nickName , .data_list .visitNum,.data_list .userSign{
 	text-align: center;
 	color: #666;
 	font-size: 14px;
+	padding-bottom: 2px;
+	padding-top: 4px;
 }
 
 .footer font{
 	font-size: 10px;
 	color: #666;
+}
+
+.data_list .blog_title{
+	margin-top:20px;
+	text-align: center;
+}
+
+.data_list .blog_info{
+	text-align: center;
+}
+
+.data_list .blog_content{
+	margin-top:20px;
+	padding-bottom: 30px;
 }

@@ -9,8 +9,9 @@
 	<div class="user_image">
 		<img src="${pageContext.request.contextPath}/static/userImages/${blogger.imagename}"/>
 	</div>
-	<div class="nickName">${blogger.nickname }</div>
-	<div class="userSign">${blogger.sign }</div>
+	<div class="nickName">昵称：${blogger.nickname }</div>
+	<div class="visitNum">访问量：6666</div>
+	<div class="userSign">『${blogger.sign }』</div>
 </div>	
 
 <div class="data_list">

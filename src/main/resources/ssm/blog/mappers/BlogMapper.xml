@@ -48,13 +48,27 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getTotal" parameterType="Map" resultType="Long">
 		SELECT COUNT(*) FROM t_blog
 		<where>
-		 	<if test="type_id!=null and type_id!=''">
-		 		and type_id=#{type_id}
+		 	<if test="typeId!=null and typeId!=''">
+		 		and type_id=#{typeId}
 		 	</if>
 		 	<if test="releaseDateStr!=null and releaseDateStr!=''">
 		 		and DATE_FORMAT(releaseDate,'%Y年%m月')=#{releaseDateStr}
 		 	</if>
 		 </where>
+	</select>
+	
+	<select id="findById" parameterType="Integer" resultMap="BlogResult">
+		SELECT * FROM t_blog WHERE id=#{id}
+	</select>
+	
+	<select id="update" parameterType="Blog" resultType="Integer">
+		update t_blog
+		<set>
+			<if test="clickHit!=null">
+				clickHit=#{clickHit},
+			</if>
+		</set>
+		where id=#{id}
 	</select>
 	
 </mapper> 

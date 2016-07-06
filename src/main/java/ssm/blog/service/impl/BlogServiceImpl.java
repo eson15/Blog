@@ -35,4 +35,12 @@ public class BlogServiceImpl implements BlogService {
 		return blogDao.getTotal(map);
 	}
 
+	public Blog findById(Integer id) {
+		return blogDao.findById(id);
+	}
+
+	public Integer update(Blog blog) {
+		return blogDao.update(blog);
+	}
+
 }

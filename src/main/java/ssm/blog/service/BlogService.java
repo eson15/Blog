@@ -19,4 +19,10 @@ public interface BlogService {
 
 	// 获取总记录数
 	public Long getTotal(Map<String, Object> map);
+
+	// 根据id获取博客
+	public Blog findById(Integer id);
+
+	// 更新博客信息
+	public Integer update(Blog blog);
 }

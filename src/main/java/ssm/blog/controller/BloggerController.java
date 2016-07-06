@@ -10,6 +10,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import ssm.blog.entity.Blogger;
 import ssm.blog.service.BloggerService;
@@ -44,5 +45,15 @@ public class BloggerController {
 			return "login";
 		} 
 
+	}
+	
+	@RequestMapping("/aboutme")
+	public ModelAndView abouotMe() {
+		ModelAndView modelAndView = new ModelAndView();
+		Blogger blogger = bloggerService.getBloggerData();
+		modelAndView.addObject("blogger", blogger);
+		modelAndView.addObject("commonPage", "foreground/blogger/bloggerInfo.jsp");
+		modelAndView.setViewName("mainTemp");
+		return modelAndView;
 	}
 }

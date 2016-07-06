@@ -14,7 +14,6 @@
 <script type="text/javascript">
 	function changeClass(obj) {
 		var li = obj.parentNode; //获取父节点
-		alert(li);
 		li.className = "active";
 	}
 </script>

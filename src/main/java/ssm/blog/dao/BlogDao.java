@@ -11,13 +11,19 @@ import ssm.blog.entity.Blog;
  *
  */
 public interface BlogDao {
-	
-	//获取博客信息，根据日期月份分组查询
+
+	// 获取博客信息，根据日期月份分组查询
 	public List<Blog> getBlogData();
-	
-	//分页查询博客
+
+	// 分页查询博客
 	public List<Blog> listBlog(Map<String, Object> map);
-	
-	//获取总记录数
+
+	// 获取总记录数
 	public Long getTotal(Map<String, Object> map);
+
+	// 根据id获取博客
+	public Blog findById(Integer id);
+
+	// 更新博客信息
+	public Integer update(Blog blog);
 }
