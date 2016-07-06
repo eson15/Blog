@@ -107,15 +107,18 @@
 }
 
 .data_list .blog_title{
-	margin-top:20px;
+	margin-top:30px;
 	text-align: center;
 }
 
 .data_list .blog_info{
+	margin-top: 30px;
+	color: #666;
 	text-align: center;
+	
 }
 
 .data_list .blog_content{
-	margin-top:20px;
+	margin-top:50px;
 	padding-bottom: 30px;
 }

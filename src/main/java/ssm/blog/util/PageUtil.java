@@ -1,5 +1,7 @@
 package ssm.blog.util;
 
+import ssm.blog.entity.Blog;
+
 /**
  * 分页工具类
  * @author Administrator
@@ -53,6 +55,23 @@ public class PageUtil {
 			}
 			return pageCode.toString();
 		}
+	}
+	
+	public static String getPrevAndNextPageCode(Blog prev, Blog next, String projectContent) {
+		StringBuffer pageCode = new StringBuffer();
+		if(prev == null || prev.getId() == null) {
+			pageCode.append("<p>上一篇：无</P>");
+		} else {
+			pageCode.append("<p>上一篇：<a href='" + projectContent + "/blog/articles/" + prev.getId() + ".html'>" + prev.getTitle() + "</a></p>");
+		}
+		
+		if(next == null || next.getId() == null) {
+			pageCode.append("<p>下一篇：无</P>");
+		} else {
+			pageCode.append("<p>上一篇：<a href='" + projectContent + "/blog/articles/" + next.getId() + ".html'>" + next.getTitle() + "</a></p>");
+		}
+		
+		return pageCode.toString();
 	}
 
 }

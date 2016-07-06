@@ -71,4 +71,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where id=#{id}
 	</select>
 	
+	<select id="getPrevBlog" parameterType="Integer" resultMap="BlogResult">
+		SELECT * FROM t_blog WHERE id&lt;#{id} ORDER BY id DESC LIMIT 1
+	</select>
+	
+	<select id="getNextBlog" parameterType="Integer" resultMap="BlogResult">
+		SELECT * FROM t_blog WHERE id&gt;#{id} ORDER BY id ASC LIMIT 1
+	</select>
+
 </mapper> 

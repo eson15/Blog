@@ -43,4 +43,12 @@ public class BlogServiceImpl implements BlogService {
 		return blogDao.update(blog);
 	}
 
+	public Blog getPrevBlog(Integer id) {
+		return blogDao.getPrevBlog(id);
+	}
+
+	public Blog getNextBlog(Integer id) {
+		return blogDao.getNextBlog(id);
+	}
+
 }
