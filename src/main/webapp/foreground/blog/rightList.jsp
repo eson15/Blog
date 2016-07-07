@@ -65,7 +65,6 @@
 	</div>
 </div>
 
-
 <div class="data_list">
 	<div class="data_list_title">
 		<img
@@ -75,17 +74,15 @@
 	<div class="datas">
 		<ul>
 			<div style="text-align:left;padding-top:20px;">
-				<div class="bshare-custom icon-medium-plus">
-					<a title="分享到新浪微博" class="bshare-sinaminiblog"></a>
-					<a title="分享到QQ空间" class="bshare-qzone"></a>
-					<a title="分享到腾讯微博" class="bshare-qqmb"></a>
-					<a title="分享到网易微博" class="bshare-neteasemb"></a>
-					<a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
+				<div class="bdsharebuttonbox">
+					<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+					<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+					<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+					<a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+					<a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+					<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+					<a href="#" class="bds_more" data-cmd="more"></a>
 				</div>
-				<script type="text/javascript" charset="utf-8"
-					src="http://static.bshare.com/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh_TW"></script>
-				<script type="text/javascript" charset="utf-8"
-					src="http://static.bshare.com/b/bshareC0.js"></script>
 			</div>
 		</ul>
 	</div>

@@ -37,7 +37,7 @@
 			<nav>
 			  <ul class="pagination">
 			    ${pageCode }
-			  </ul>
-			</nav>	
+			 </ul>
+			</nav>
 		</div>			
 </div>

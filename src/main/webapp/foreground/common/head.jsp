@@ -2,7 +2,7 @@
 
 
 <div class="col-md-4">
-	<div class="blog"><strong><a href="#" style="text-decoration:none">倪升武的博客</a></strong></div>
+	<div class="blog"><strong><a href="${pageContext.request.contextPath}/index.html" style="text-decoration:none">倪升武的博客</a></strong></div>
 </div>
 
 <div class="col-md-8">

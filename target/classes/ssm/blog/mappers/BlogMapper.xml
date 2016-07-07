@@ -67,6 +67,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="clickHit!=null">
 				clickHit=#{clickHit},
 			</if>
+			<if test="replyHit!=null">
+				replyHit=#{replyHit},
+			</if>
 		</set>
 		where id=#{id}
 	</select>

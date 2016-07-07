@@ -85,7 +85,7 @@ public class IndexController {
 		if(StringUtil.isNotEmpty(releaseDateStr)) {
 			param.append("releaseDateStr=" + releaseDateStr + "&");
 		}
-		modelAndView.addObject("pageCode", PageUtil.genPagination(
+		modelAndView.addObject("pageCode", PageUtil.genPagination( //调用代码生成的工具类生成前台显示
 				request.getContextPath() + "/index.html", //还是请求该controller的index方法
 				blogService.getTotal(map), 
 				Integer.parseInt(page), 6,

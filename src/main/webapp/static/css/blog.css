@@ -3,6 +3,10 @@
 	color: #708090;
 }
 
+.container {
+	width: 1400px;
+}
+
 .data_list{
 	border: 1px solid #E5E5E5;
 	padding: 10px;
@@ -121,4 +125,40 @@
 .data_list .blog_content{
 	margin-top:50px;
 	padding-bottom: 30px;
+}
+
+.data_list .commentDatas{
+	padding: 10px;
+}
+
+.data_list .commentDatas .comment,.data_list .commentDatas .otherComment{
+	margin-top:10px;
+	margin-bottom: 5px;
+	padding-bottom:15px;
+	border-bottom: 1px dotted gray;
+}
+
+.data_list .commentDatas .comment font, .data_list .commentDatas .otherComment font{
+	font-weight: bold;
+}
+
+.data_list .commentDatas .otherComment{
+	display: none;
+}
+
+.data_list .publish_comment{
+	padding-top: 10px;
+	padding-bottom: 50px;
+}
+
+.data_list .publish_comment .publishButton{
+	padding-top:10px;
+	float: right;
+}
+
+
+.data_list .verCode{
+	padding-top:10px;
+	padding-left:10px;
+	float: left;
 }

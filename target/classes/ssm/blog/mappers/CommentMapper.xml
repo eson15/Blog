@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ssm.blog.dao.CommentDao">
+
+	<resultMap type="Comment" id="CommentResult">
+		<id property="id" column="id"/>
+		<result property="userIp" column="userIp"/>
+		<result property="content" column="content"/>
+		<result property="commentDate" column="commentDate"/>
+		<result property="state" column="state"/>
+		<association property="blog" column="blog_id" select="ssm.blog.dao.BlogDao.findById">
+		</association>
+	</resultMap>
+	
+	
+	<select id="getCommentData" parameterType="Map"	resultMap="CommentResult">
+		SELECT * FROM t_comment 
+		<where>
+			<if test="blogId!=null">
+				and blog_id=#{blogId}
+			</if>
+			<if test="state!=null">
+				and state=#{state}
+			</if>
+		</where>
+		ORDER BY commentDate DESC
+	</select>
+		
+	<insert id="addComment" parameterType="Comment">
+		INSERT INTO t_comment VALUES(NULL,#{userIp},#{content},now(),0,#{blog.id})
+	</insert>
+	
+</mapper> 

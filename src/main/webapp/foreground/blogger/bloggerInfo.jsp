@@ -8,7 +8,7 @@
 	<div class="datas">
 			<ul>	
 				<li>
-					具体内容本博主还没编辑，敬请期待！
+					${blogger.profile }
 				</li>
 				<hr style="height:5px;border:none;border-top:1px dashed gray;padding-bottom:10px;" />																												
 			</ul>			

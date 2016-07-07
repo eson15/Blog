@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 
 
-<div class="col-md-12">
+<div class="col-md-12">	
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">				    
 	    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -9,10 +9,9 @@
 	      <ul class="nav navbar-nav">
 	      	<li><a class="navbar-brand" href="${pageContext.request.contextPath}/index.html" onclick="changeClass(this)">博客首页</a></li>
 	        <li><a class="navbar-brand" href="${pageContext.request.contextPath}/blogger/aboutme.html" onclick="changeClass(this)">关于博主</a></li>
-	        <li><a class="navbar-brand" href="#" onclick="changeClass(this)">我的相册</a></li>
-	        <li><a class="navbar-brand" href="#" onclick="changeClass(this)">资源小站</a></li>
-	        <li><a class="navbar-brand" href="#" onclick="changeClass(this)">程序人生</a></li>
-	        <li><a class="navbar-brand" href="http://blog.csdn.net/eson_15" target="blank">CSDN</a></li>
+	        <li><a class="navbar-brand" href="${pageContext.request.contextPath}/blogger/myalbum.html" onclick="changeClass(this)">我的相册</a></li>
+	        <li><a class="navbar-brand" href="${pageContext.request.contextPath}/blogger/resource.html" onclick="changeClass(this)">资源小站</a></li>
+	        <li><a class="navbar-brand" href="http://blog.csdn.net/eson_15" target="blank">我的CSDN</a></li>
 	      </ul>
 	      <form class="navbar-form navbar-right" role="search">
 	        <div class="form-group">
@@ -24,3 +23,4 @@
 	  </div><!-- /.container-fluid -->
 	</nav>
 </div>
+
