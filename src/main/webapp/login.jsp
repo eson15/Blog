@@ -239,6 +239,6 @@ a {
 		</DIV>
 	</form>
 	<div style="text-align:center;padding-top: 30px">Copyright ©
-		2014-2016 同济大学电信学院 版权所有 >_<</div>
+		2014-2016 SSM个人博客系统  版权所有 >_<</div>
 </body>
 </html>

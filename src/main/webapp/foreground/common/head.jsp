@@ -2,7 +2,11 @@
 
 
 <div class="col-md-4">
-	<div class="blog"><strong><a href="${pageContext.request.contextPath}/index.html" style="text-decoration:none">倪升武的博客</a></strong></div>
+	<div class="blog">
+		<a href="${pageContext.request.contextPath}/index.html" style="text-decoration:none">
+			<img alt="logo" src="${pageContext.request.contextPath}/static/images/logo.png">
+		</a>
+	</div>
 </div>
 
 <div class="col-md-8">

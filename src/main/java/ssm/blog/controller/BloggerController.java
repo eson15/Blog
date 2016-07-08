@@ -40,7 +40,7 @@ public class BloggerController {
 			return "redirect:/admin/main.jsp";
 		} catch (AuthenticationException e) {
 			e.printStackTrace();
-			request.setAttribute("blollger", blogger);
+			request.setAttribute("bloger", blogger);
 			request.setAttribute("errorInfo", "用户名或密码错误");
 			return "login";
 		} 
