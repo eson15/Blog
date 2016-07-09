@@ -82,4 +82,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM t_blog WHERE id&gt;#{id} ORDER BY id ASC LIMIT 1
 	</select>
 
+	<insert id="addBlog" parameterType="Blog">
+		INSERT INTO t_blog VALUES(NULL,#{title},#{summary},now(),0,0,#{content},#{keyWord},#{blogType.id})
+	</insert>
+
 </mapper> 

@@ -25,10 +25,13 @@ public interface BlogService {
 
 	// 更新博客信息
 	public Integer update(Blog blog);
-	
+
 	// 获取上一篇博客
 	public Blog getPrevBlog(Integer id);
 
 	// 获取下一篇一篇博客
 	public Blog getNextBlog(Integer id);
+
+	// 添加博客
+	public Integer addBlog(Blog blog);
 }

@@ -32,4 +32,7 @@ public interface BlogDao {
 
 	// 获取下一篇一篇博客
 	public Blog getNextBlog(Integer id);
+	
+	// 添加博客
+	public Integer addBlog(Blog blog);
 }

@@ -51,4 +51,8 @@ public class BlogServiceImpl implements BlogService {
 		return blogDao.getNextBlog(id);
 	}
 
+	public Integer addBlog(Blog blog) {
+		return blogDao.addBlog(blog);
+	}
+
 }
