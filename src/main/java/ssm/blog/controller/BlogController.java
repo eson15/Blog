@@ -57,7 +57,7 @@ public class BlogController {
 		
 		//查询评论信息
 		Map<String, Object> map = new HashMap<String, Object>();
-//		map.put("blogId", blog.getId());
+		map.put("blogId", blog.getId());
 		map.put("state", 1);
 		List<Comment> commentList = commentService.getCommentData(map);
 		

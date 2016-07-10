@@ -57,14 +57,12 @@ public class CommentController {
 			} else { //有id表示修改
 				
 			}
-		}
-		
+		}		
 		//判断是否添加成功
 		if(resultTotal > 0) {
 			result.put("success", true);
-		}
-		
-		ResponseUtil.write(response, result);
+		}		
+		ResponseUtil.write(response, result);		
 		return null;
 	}
 }
