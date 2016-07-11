@@ -84,6 +84,7 @@
 			var content = UE.getEditor('editor').getContent();
 			var summary = UE.getEditor('editor').getContentTxt().substr(0, 155);
 			var keyWord = $("#keyWord").val();
+			var contentNoTag = UE.getEditor('editor').getContentTxt();
 
 			if (title == null || title == '') {
 				alert("请输入标题！");
@@ -98,7 +99,8 @@
 							'blogType.id' : blogTypeId,
 							'content' : content,
 							'summary' : summary,
-							'keyWord' : keyWord
+							'keyWord' : keyWord,
+							'contentNoTag' : contentNoTag
 						}, function(result) {
 							if (result.success) {
 								alert("博客发布成功！");

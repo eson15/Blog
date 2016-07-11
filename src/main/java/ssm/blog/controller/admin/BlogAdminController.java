@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import ssm.blog.entity.Blog;
+import ssm.blog.lucene.BlogIndex;
 import ssm.blog.service.BlogService;
 import ssm.blog.util.ResponseUtil;
 
@@ -24,12 +25,15 @@ public class BlogAdminController {
 	@Resource
 	private BlogService blogService;
 	
+	private BlogIndex blogIndex = new BlogIndex();
+	
 	@RequestMapping("/save")
 	public String save(Blog blog, HttpServletResponse response) throws Exception {
 		
 		int resultTotal = 0; //接收返回结果记录数
 		if(blog.getId() == null) { //说明是第一次插入
 			resultTotal = blogService.addBlog(blog);
+			blogIndex.addIndex(blog); //添加博客的索引
 		} else {
 			
 		}

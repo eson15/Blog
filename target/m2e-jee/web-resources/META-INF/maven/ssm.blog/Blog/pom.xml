@@ -151,6 +151,16 @@
 	    <artifactId>lucene-analyzers-common</artifactId>
 	    <version>5.3.1</version>
 	</dependency>
+	<dependency>
+	    <groupId>org.apache.lucene</groupId>
+	    <artifactId>lucene-highlighter</artifactId>
+	    <version>5.3.1</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.lucene</groupId>
+	    <artifactId>lucene-analyzers-smartcn</artifactId>
+	    <version>5.3.1</version>
+	</dependency>
 	
 	<!-- apache共公包 -->
 	<dependency>

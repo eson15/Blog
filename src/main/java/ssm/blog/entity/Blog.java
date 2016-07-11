@@ -18,6 +18,7 @@ public class Blog {
 	private Integer clickHit;
 	private Integer replyHit;
 	private String content;
+	private String contentNoTag; //不带标签的博客内容，用于Lucene索引中
 	private String keyWord; //关键字，用空格隔开
 	
 	private BlogType blogType; //博客类型
@@ -120,6 +121,14 @@ public class Blog {
 
 	public void setImageList(List<String> imageList) {
 		this.imageList = imageList;
+	}
+
+	public String getContentNoTag() {
+		return contentNoTag;
+	}
+
+	public void setContentNoTag(String contentNoTag) {
+		this.contentNoTag = contentNoTag;
 	}
 	
 }
