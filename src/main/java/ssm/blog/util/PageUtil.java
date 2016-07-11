@@ -73,5 +73,40 @@ public class PageUtil {
 		
 		return pageCode.toString();
 	}
+	
+	//Lucence搜索博客结果的分页
+	public static String getUpAndDownPageCode (
+			Integer page, 
+			Integer totalNum, 
+			String q, 
+			Integer pageSize, 
+			String projectContext) {
+		
+		//计算总页数
+		long totalPage = totalNum % pageSize==0 ? totalNum/pageSize : totalNum/pageSize+1; 
+		StringBuffer pageCode = new StringBuffer();
+		if(totalPage == 0) {
+			return "";
+		} else {
+			pageCode.append("<nav>");
+			pageCode.append("<ul class='pager'>");
+			if(page > 1) {
+				pageCode.append("<li><a href='"+projectContext+"/blog/search.html?page="+(page-1)+"&q="+q+"'>上一页</a></li>");
+			} else {
+				pageCode.append("<li class='disabled'><a>上一页</a></li>");
+			}
+			if(page < totalPage) {
+				pageCode.append("<li><a href='"+projectContext+"/blog/search.html?page="+(page+1)+"&q="+q+"'>下一页</a></li>");
+			} else {
+				pageCode.append("<li class='disabled'><a>下一页</a></li>");
+			}
+			pageCode.append("</ul>");
+			pageCode.append("<nav>");
+			pageCode.append("<nav>");
+			pageCode.append("<nav>");
+		}
+		
+		return pageCode.toString();
+	}
 
 }
