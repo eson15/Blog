@@ -23,4 +23,14 @@ public interface BlogTypeDao {
 	
 	// 获取总记录数
 	public Long getTotal(Map<String, Object> map);
+	
+	// 添加博客类别
+	public Integer addBlogType(BlogType blogType);
+	
+	// 更新博客类别
+	public Integer updateBlogType(BlogType blogType);
+	
+	// 删除博客类别
+	public Integer deleteBlogType(Integer id);
+
 }

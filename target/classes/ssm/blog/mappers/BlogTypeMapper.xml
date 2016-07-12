@@ -27,5 +27,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findById" parameterType="Integer" resultMap="BlogTypeResult">
 		SELECT * FROM t_blogtype WHERE id=#{id}
 	</select>
+	
+	<select id="listBlogType" parameterType="Map" resultMap="BlogTypeResult">
+		 SELECT * FROM t_blogtype 
+		 <if test="start!=null and pageSize!=null">
+		 	limit #{start},#{pageSize}
+		 </if>
+	</select>
+	
+	<select id="getTotal" parameterType="Map" resultType="Long">
+		SELECT COUNT(*) FROM t_blogtype
+	</select>
+	
+	<insert id="addBlogType" parameterType="BlogType" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO t_blogtype VALUES(null,#{typeName},#{orderNum})
+	</insert>
+	
+	<delete id="deleteBlogType" parameterType="Integer">
+		delete from t_blogtype where id=#{id}
+	</delete>
+	
+	<update id="updateBlogType" parameterType="BlogType">
+		update t_blogtype
+		<set>
+			<if test="typeName!=null and typeName!=''">
+		 		typeName=#{typeName},
+		 	</if>
+		 	<if test="orderNum!=null and orderNum!=''">
+		 		orderNum=#{orderNum},
+		 	</if>
+		</set>
+		where id=#{id}
+	</update>
 	 
 </mapper> 

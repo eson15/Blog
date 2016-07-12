@@ -1,6 +1,7 @@
 package ssm.blog.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -25,6 +26,26 @@ public class BlogTypeServiceImpl implements BlogTypeService {
 	public List<BlogType> getBlogTypeData() {
 		
 		return blogTypeDao.getBlogTypeData();
+	}
+
+	public List<BlogType> listBlogType(Map<String, Object> map) {
+		return blogTypeDao.listBlogType(map);
+	}
+
+	public Long getTotal(Map<String, Object> map) {
+		return blogTypeDao.getTotal(map);
+	}
+
+	public Integer addBlogType(BlogType blogType) {
+		return blogTypeDao.addBlogType(blogType);
+	}
+
+	public Integer updateBlogType(BlogType blogType) {
+		return blogTypeDao.updateBlogType(blogType);
+	}
+
+	public Integer deleteBlogType(Integer id) {
+		return blogTypeDao.deleteBlogType(id);
 	}
 
 }
