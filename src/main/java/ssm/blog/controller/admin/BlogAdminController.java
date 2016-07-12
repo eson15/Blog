@@ -19,6 +19,7 @@ import ssm.blog.entity.Blog;
 import ssm.blog.entity.PageBean;
 import ssm.blog.lucene.BlogIndex;
 import ssm.blog.service.BlogService;
+import ssm.blog.service.CommentService;
 import ssm.blog.util.DateJsonValueProcessor;
 import ssm.blog.util.ResponseUtil;
 import ssm.blog.util.StringUtil;
@@ -34,6 +35,8 @@ public class BlogAdminController {
 
 	@Resource
 	private BlogService blogService;
+	@Resource
+	private CommentService commentService;
 	
 	private BlogIndex blogIndex = new BlogIndex();
 	
@@ -94,7 +97,9 @@ public class BlogAdminController {
 		
 		String[] idsStr = ids.split(",");
 		for(int i = 0; i < idsStr.length; i++) {
-			blogService.deleteBlog(Integer.parseInt(idsStr[i]));
+			int id = Integer.parseInt(idsStr[i]);
+			commentService.deleteCommentByBlogId(id);
+			blogService.deleteBlog(id);
 			blogIndex.deleteIndex(idsStr[i]);
 		}
 		JSONObject result = new JSONObject();

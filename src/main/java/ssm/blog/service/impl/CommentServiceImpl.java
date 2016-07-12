@@ -30,4 +30,20 @@ public class CommentServiceImpl implements CommentService {
 		return commentDao.addComment(comment);
 	}
 
+	public Long getTotal(Map<String, Object> map) {
+		return commentDao.getTotal(map);
+	}
+
+	public Integer update(Comment comment) {
+		return commentDao.update(comment);
+	}
+
+	public Integer deleteComment(Integer id) {
+		return commentDao.deleteComment(id);
+	}
+
+	public Integer deleteCommentByBlogId(Integer blogId) {
+		return commentDao.deleteCommentByBlogId(blogId);
+	}
+
 }

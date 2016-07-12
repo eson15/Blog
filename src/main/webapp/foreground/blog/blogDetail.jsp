@@ -31,8 +31,7 @@
 				function(result) {
 					if(result.success) {
 						alert("评论已提交成功，博主审核后添加");
-						$("#content").val(""); //评论成功后，将评论框和验证码输入框中内容清空
-						$("#imageCode").val("");
+						window.location.reload();
 					} else {
 						alert(result.errorInfo);
 					}
