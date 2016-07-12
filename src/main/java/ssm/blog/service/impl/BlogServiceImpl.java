@@ -55,4 +55,8 @@ public class BlogServiceImpl implements BlogService {
 		return blogDao.addBlog(blog);
 	}
 
+	public Integer deleteBlog(Integer id) {
+		return blogDao.deleteBlog(id);
+	}
+
 }

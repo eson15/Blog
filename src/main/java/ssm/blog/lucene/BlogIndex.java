@@ -17,6 +17,7 @@ import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
+import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.BooleanClause;
 import org.apache.lucene.search.BooleanQuery;
@@ -65,6 +66,15 @@ public class BlogIndex {
 		writer.close();
 	}
 	
+	//删除指定博客的索引
+	public void deleteIndex(String blogId) throws Exception {
+		IndexWriter writer = getWriter();
+		writer.deleteDocuments(new Term("id", blogId));
+		writer.forceMergeDeletes();//强制删除
+		writer.commit();
+		writer.close();
+	}
+	
 	//查询博客索引信息
 	public List<Blog> searchBlog(String q) throws Exception {
 		
@@ -97,8 +107,8 @@ public class BlogIndex {
 			Blog blog = new Blog();
 			blog.setId(Integer.parseInt(doc.get("id")));
 			blog.setReleaseDateStr(doc.get("releaseDate"));
-			String title = StringEscapeUtils.escapeHtml(doc.get("title"));
-			String content = StringEscapeUtils.escapeHtml(doc.get("content"));
+			String title = doc.get("title");
+			String content = doc.get("content");
 			if(title != null) {
 				TokenStream tokenStream = analyzer.tokenStream("title", new StringReader(title));
 				String hTitle = highlighter.getBestFragment(tokenStream, title);

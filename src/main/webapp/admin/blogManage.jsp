@@ -22,8 +22,34 @@
 	}
 	
 	function searchBlog() {
-		$("#dg").datagrid('load', {
+		$("#dg").datagrid("load", {
 			"title":$("#s_title").val()
+		});
+	}
+	
+	function deleteBlog() {
+		var selectedRows = $("#dg").datagrid("getSelections");
+		if(selectedRows.length == 0) {
+			$.messager.alert("系统提示", "请选择要删除的数据");
+			return;
+		}
+		var idsStr = [];
+		for(var i = 0; i < selectedRows.length; i++) {
+			idsStr.push(selectedRows[i].id);
+		}
+		var ids = idsStr.join(","); //1,2,3,4
+		$.messager.confirm("系统提示", "您确定要删除选中的<font color=red>"+selectedRows.length+"</font>条数据么？", function(r) {
+			if(r) {
+				$.post("${pageContext.request.contextPath}/admin/blog/delete.do",
+						{ids: ids}, function(result){
+							if(result.success) {
+								$.messager.alert("系统提示", "数据删除成功！");
+								$("#dg").datagrid("reload");
+							} else {
+								$.messager.alert("系统提示", "数据删除失败！");
+							}
+						}, "json");
+			}
 		});
 	}
 </script>
@@ -47,6 +73,8 @@
 	<div>
 		&nbsp;标题&nbsp;<input type="text" id="s_title" size="20" onkeydown="if(event.keyCode==13) searchBlog()">
 		<a href="javascript:searchBlog()" class="easyui-linkbutton" iconCls="icon-search" plain="true">搜索</a>
+		<a href="javascript:deleteBlog()" class="easyui-linkbutton" iconCls="icon-remove" plain="true">删除</a>
+		<a href="javascript:openBlogModifyTab()" class="easyui-linkbutton" iconCls="icon-edit" plain="true">修改</a>		
 	</div>
 </div>
 </body>

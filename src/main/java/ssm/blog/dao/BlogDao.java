@@ -35,4 +35,7 @@ public interface BlogDao {
 	
 	// 添加博客
 	public Integer addBlog(Blog blog);
+	
+	// 删除博客信息
+	public Integer deleteBlog(Integer id);
 }

@@ -91,5 +91,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="addBlog" parameterType="Blog" keyProperty="id" useGeneratedKeys="true">
 		INSERT INTO t_blog VALUES(null,#{title},#{summary},now(),0,0,#{content},#{keyWord},#{blogType.id})
 	</insert>
+	
+	<delete id="deleteBlog" parameterType="Integer">
+		delete from t_blog where id=#{id}
+	</delete>
 
 </mapper> 
