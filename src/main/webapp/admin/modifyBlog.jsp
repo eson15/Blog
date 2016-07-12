@@ -4,7 +4,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>写博客页面</title>
+<title>修改博客页面</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/static/jquery-easyui-1.3.3/themes/default/easyui.css">
@@ -21,9 +21,7 @@
 <script type="text/javascript" charset="utf-8"
 	src="${pageContext.request.contextPath}/static/ueditor1_4_3_3/ueditor.config.js"></script>
 <script type="text/javascript" charset="utf-8"
-	src="${pageContext.request.contextPath}/static/ueditor1_4_3_3/ueditor.all.min.js">
-	
-</script>
+	src="${pageContext.request.contextPath}/static/ueditor1_4_3_3/ueditor.all.min.js">	</script>
 <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
 <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
 <script type="text/javascript" charset="utf-8"
@@ -33,7 +31,7 @@
 
 <body style="margin: 10px; font-family: microsoft yahei">
 
-	<div id="p" class="easyui-panel" title="编写博客" style="padding: 10px;">
+	<div id="p" class="easyui-panel" title="修改博客" style="padding: 10px;">
 		
 		<table cellspacing="20px">
 			<tr>
@@ -65,7 +63,7 @@
 			<tr>
 				<td></td>
 				<td><a href="javascript:submitData()" class="easyui-linkbutton"
-					data-options="iconCls:'icon-submit'">发布博客</a></td>
+					data-options="iconCls:'icon-submit'">确认修改</a></td>
 			</tr>
 		</table>
 	</div>
@@ -76,6 +74,22 @@
 	<!-- 实例化编辑器 -->
 	<script type="text/javascript">
 		var ue = UE.getEditor('editor');
+		ue.addListener("ready", function(){
+			//通过UE自己封装的ajax请求数据
+			UE.ajax.request("${pageContext.request.contextPath}/admin/blog/findById.do",
+					{
+						method: "post",
+						async: false,
+						data: {"id":"${param.id}"},
+						onsuccess: function(result) { //根据id查询Blog，返回一个json格式的blog对象
+							result = eval("(" + result.responseText + ")");
+							$("#title").val(result.title);
+							$("#keyWord").val(result.keyWord);							
+							$("#blogTypeId").combobox("setValue", result.blogType.id);	
+							UE.getEditor('editor').setContent(result.content);
+						}
+					});
+		});
 	</script>
 	<script type="text/javascript">
 		function submitData() {
@@ -95,6 +109,7 @@
 			} else {
 				$.post("${pageContext.request.contextPath}/admin/blog/save.do",
 						{
+							'id': '${param.id}',
 							'title' : title,
 							'blogType.id' : blogTypeId,
 							'content' : content,
@@ -103,10 +118,9 @@
 							'contentNoTag' : contentNoTag
 						}, function(result) {
 							if (result.success) {
-								$.messager.alert("系统提示", "博客发布成功！");
-								clearValues();
+								$.messager.alert("系统提示", "博客修改成功！");
 							} else {
-								$.messager.alert("系统提示", "博客发布失败！");
+								$.messager.alert("系统提示", "博客修改失败！");
 							}
 						}, "json");
 			}

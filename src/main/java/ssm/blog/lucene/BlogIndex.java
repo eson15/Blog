@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.cn.smart.SmartChineseAnalyzer;
 import org.apache.lucene.document.Document;
@@ -72,6 +71,18 @@ public class BlogIndex {
 		writer.deleteDocuments(new Term("id", blogId));
 		writer.forceMergeDeletes();//强制删除
 		writer.commit();
+		writer.close();
+	}
+	
+	//更新博客索引
+	public void updateIndex(Blog blog) throws Exception {
+		IndexWriter writer = getWriter();
+		Document doc = new Document();
+		doc.add(new StringField("id", String.valueOf(blog.getId()), Field.Store.YES));
+		doc.add(new TextField("title", blog.getTitle(), Field.Store.YES));
+		doc.add(new StringField("releaseDate", DateUtil.formatDate(new Date(), "yyyy-MM-dd"), Field.Store.YES));		
+		doc.add(new TextField("content", blog.getContentNoTag(), Field.Store.YES));		
+		writer.updateDocument(new Term("id", String.valueOf(blog.getId())), doc);
 		writer.close();
 	}
 	

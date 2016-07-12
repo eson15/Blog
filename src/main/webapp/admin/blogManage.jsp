@@ -38,7 +38,7 @@
 			idsStr.push(selectedRows[i].id);
 		}
 		var ids = idsStr.join(","); //1,2,3,4
-		$.messager.confirm("系统提示", "您确定要删除选中的<font color=red>"+selectedRows.length+"</font>条数据么？", function(r) {
+		$.messager.confirm("系统提示", "<font color=red>您确定要删除选中的"+selectedRows.length+"条数据么？</font>", function(r) {
 			if(r) {
 				$.post("${pageContext.request.contextPath}/admin/blog/delete.do",
 						{ids: ids}, function(result){
@@ -51,6 +51,20 @@
 						}, "json");
 			}
 		});
+	}
+	
+	function openBlogModifyTab() {
+		var selectedRows = $("#dg").datagrid("getSelections");
+		if(selectedRows.length != 1) {
+			$.messager.alert("系统提示", "请选择一个要修改的博客");
+			return;
+		}
+		var row = selectedRows[0];
+		window.parent.openTab("修改博客","modifyBlog.jsp?id=" + row.id, "icon-writeblog");
+	}
+	
+	function reload() {
+		$("#dg").datagrid("reload");
 	}
 </script>
 
@@ -75,6 +89,7 @@
 		<a href="javascript:searchBlog()" class="easyui-linkbutton" iconCls="icon-search" plain="true">搜索</a>
 		<a href="javascript:deleteBlog()" class="easyui-linkbutton" iconCls="icon-remove" plain="true">删除</a>
 		<a href="javascript:openBlogModifyTab()" class="easyui-linkbutton" iconCls="icon-edit" plain="true">修改</a>		
+		<a href="javascript:reload()" class="easyui-linkbutton" iconCls="icon-reload" plain="true">刷新</a>		
 	</div>
 </div>
 </body>

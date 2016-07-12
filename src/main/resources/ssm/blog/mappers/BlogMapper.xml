@@ -67,18 +67,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM t_blog WHERE id=#{id}
 	</select>
 	
-	<select id="update" parameterType="Blog" resultType="Integer">
+	<update id="update" parameterType="Blog">
 		update t_blog
 		<set>
+			<if test="title!=null and title!=''">
+		 		title=#{title},
+		 	</if>
+		 	<if test="summary!=null and summary!=''">
+		 		summary=#{summary},
+		 	</if>
+		 	<if test="content!=null and content!=''">
+		 		content=#{content},
+		 	</if>
+		 	<if test="blogType.id!=null">
+				type_id=#{blogType.id},
+			</if>
 			<if test="clickHit!=null">
 				clickHit=#{clickHit},
 			</if>
 			<if test="replyHit!=null">
 				replyHit=#{replyHit},
 			</if>
+			<if test="keyWord!=null and keyWord!=''">
+		 		keyWord=#{keyWord},
+		 	</if>
 		</set>
 		where id=#{id}
-	</select>
+	</update>
 	
 	<select id="getPrevBlog" parameterType="Integer" resultMap="BlogResult">
 		SELECT * FROM t_blog WHERE id&lt;#{id} ORDER BY id DESC LIMIT 1

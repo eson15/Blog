@@ -37,6 +37,7 @@ public class BlogAdminController {
 	
 	private BlogIndex blogIndex = new BlogIndex();
 	
+	//添加和更新博客
 	@RequestMapping("/save")
 	public String save(Blog blog, HttpServletResponse response) throws Exception {
 		
@@ -44,8 +45,9 @@ public class BlogAdminController {
 		if(blog.getId() == null) { //说明是第一次插入
 			resultTotal = blogService.addBlog(blog);
 			blogIndex.addIndex(blog); //添加博客的索引
-		} else {
-			
+		} else { //有id表示修改
+			resultTotal = blogService.update(blog);
+			blogIndex.updateIndex(blog);
 		}
 		
 		JSONObject result = new JSONObject();
@@ -101,4 +103,15 @@ public class BlogAdminController {
 		return null;
 	}
 	
+	//通过id获取博客实体
+	@RequestMapping("/findById")
+	public String findById(
+			@RequestParam(value="id", required=false)String id,
+			HttpServletResponse response) throws Exception {
+		
+		Blog blog = blogService.findById(Integer.parseInt(id));
+		JSONObject result = JSONObject.fromObject(blog);
+		ResponseUtil.write(response, result);
+		return null;
+	}
 }
