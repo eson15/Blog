@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import net.sf.json.JSONObject;
 
+import org.apache.shiro.SecurityUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -83,5 +84,13 @@ public class BloggerAdminController {
 		}
 		ResponseUtil.write(response, result);
 		return null;
+	}
+	
+	// ÍË³ö
+	@RequestMapping("/logout")
+	public String logout() throws Exception {
+		
+		SecurityUtils.getSubject().logout();
+		return "redirect:/login.jsp";
 	}
 }

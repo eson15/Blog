@@ -8,7 +8,7 @@
 	<div class="datas">
 			<ul>	
 				<li>
-					这部分内容博主还在开发中……先去看看博主的其他文章吧~
+					这部分内容博主还在开发中……先去博客首页看看博主的文章吧~~
 				</li>
 				<hr style="height:5px;border:none;border-top:1px dashed gray;padding-bottom:10px;" />																												
 			</ul>			

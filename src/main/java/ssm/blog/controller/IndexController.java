@@ -51,7 +51,7 @@ public class IndexController {
 			page = "1";
 		}
 		// 获取分页的bean
-		PageBean pageBean = new PageBean(Integer.parseInt(page), 6); //每页显示6条数据
+		PageBean pageBean = new PageBean(Integer.parseInt(page), 10); //每页显示10条数据
 
 		// map中封装起始页和每页的记录
 		Map<String, Object> map = new HashMap<String, Object>();
@@ -88,7 +88,7 @@ public class IndexController {
 		modelAndView.addObject("pageCode", PageUtil.genPagination( //调用代码生成的工具类生成前台显示
 				request.getContextPath() + "/index.html", //还是请求该controller的index方法
 				blogService.getTotal(map), 
-				Integer.parseInt(page), 6,
+				Integer.parseInt(page), 10,
 				param.toString()));
 		
 		modelAndView.addObject("blogList", blogList);

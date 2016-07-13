@@ -88,7 +88,7 @@ public class BlogController {
 			@RequestParam(value = "page", required = false) String page,
 			HttpServletRequest request) throws Exception {
 
-		int pageSize = 3;
+		int pageSize = 10;
 		ModelAndView modelAndView = new ModelAndView();
 		List<Blog> blogIndexList = blogIndex.searchBlog(q);
 		if(page == null) { //page为空表示第一次搜索

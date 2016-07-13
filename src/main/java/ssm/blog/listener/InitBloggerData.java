@@ -41,7 +41,7 @@ public class InitBloggerData implements ServletContextListener, ApplicationConte
 		
 		//同上，获取友情链接信息
 		LinkService linkService = (LinkService) applicationContext.getBean("linkService");
-		List<Link> linkList = linkService.getLinkData(); //首页显示不需要分页，传一个null即可
+		List<Link> linkList = linkService.getLinkData(); 
 		application.setAttribute("linkList", linkList);
 		
 		//同上，获取博客类别信息
