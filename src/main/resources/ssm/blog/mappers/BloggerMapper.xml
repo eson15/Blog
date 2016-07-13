@@ -22,5 +22,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM t_blogger WHERE id=1
 	</select>
 	
+	<update id="updateBlogger" parameterType="Blogger">
+		update t_blogger
+		<set>
+			<if test="nickname!=null and nickname!=''">
+		 		nickname=#{nickname},
+		 	</if>
+			<if test="sign!=null and sign!=''">
+		 		sign=#{sign},
+		 	</if>
+			<if test="profile!=null and profile!=''">
+		 		profile=#{profile},
+		 	</if>
+			<if test="imagename!=null and imagename!=''">
+		 		imagename=#{imagename},
+		 	</if>
+		</set>
+		where id=#{id}
+	</update>
+	
 	
 </mapper> 
