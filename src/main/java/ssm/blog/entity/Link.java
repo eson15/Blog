@@ -10,7 +10,7 @@ public class Link {
 	private Integer id;
 	private String linkname; //Á´½ÓÃû³Æ
 	private String linkurl; //Á´½ÓµØÖ·
-	private Integer linkorder; //Á´½ÓÅÅĞòµÄĞòºÅ
+	private Integer orderNum; //Á´½ÓÅÅĞòµÄĞòºÅ
 	
 	public Integer getId() {
 		return id;
@@ -31,10 +31,10 @@ public class Link {
 		this.linkurl = linkurl;
 	}
 	public Integer getOrder() {
-		return linkorder;
+		return orderNum;
 	}
-	public void setOrder(Integer linkorder) {
-		this.linkorder = linkorder;
+	public void setOrder(Integer orderNum) {
+		this.orderNum = orderNum;
 	}
 
 	

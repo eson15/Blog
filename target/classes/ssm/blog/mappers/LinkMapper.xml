@@ -8,13 +8,48 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<id property="id" column="id"/>
 		<result property="linkname" column="linkname"/>
 		<result property="linkurl" column="linkurl"/>
-		<result property="linkorder" column="linkorder"/>
+		<result property="orderNum" column="orderNum"/>
 	</resultMap>
 	
-	
 	<select id="getLinkData" resultMap="LinkResult">
-		SELECT * FROM t_link ORDER BY linkorder
+		SELECT * FROM t_link ORDER BY orderNum
 	</select>
+	
+	<select id="listLinkData" parameterType="Map" resultMap="LinkResult">
+		SELECT * FROM t_link ORDER BY orderNum
+		<if test="start!=null and pageSize!=null">
+		 	limit #{start},#{pageSize}
+		 </if>
+	</select>
+	
+	<select id="getTotal" parameterType="Map" resultType="Long">
+		SELECT COUNT(*) FROM t_link
+	</select>
+	
+	<insert id="addLink" parameterType="Link" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO t_link VALUES(null,#{linkname},#{linkurl},#{orderNum})
+	</insert>
+	
+	<delete id="deleteLink" parameterType="Integer">
+		delete from t_link where id=#{id}
+	</delete>
+	
+	<update id="updateLink" parameterType="Link">
+		update t_link
+		<set>
+			<if test="linkname!=null and linkname!=''">
+		 		linkname=#{linkname},
+		 	</if>
+		 	<if test="linkurl!=null and linkurl!=''">
+		 		linkurl=#{linkurl},
+		 	</if>
+		 	<if test="orderNum!=null">
+		 		orderNum=#{orderNum},
+		 	</if>
+		</set>
+		where id=#{id}
+	</update>
+	
 	
 	
 </mapper> 
