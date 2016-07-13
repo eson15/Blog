@@ -28,6 +28,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="nickname!=null and nickname!=''">
 		 		nickname=#{nickname},
 		 	</if>
+			<if test="password!=null and password!=''">
+		 		password=#{password},
+		 	</if>
 			<if test="sign!=null and sign!=''">
 		 		sign=#{sign},
 		 	</if>
@@ -38,7 +41,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 		imagename=#{imagename},
 		 	</if>
 		</set>
-		where id=#{id}
+		where id=1
 	</update>
 	
 	

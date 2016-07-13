@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import ssm.blog.entity.Blogger;
 import ssm.blog.service.BloggerService;
+import ssm.blog.util.CryptographyUtil;
 import ssm.blog.util.DateUtil;
 import ssm.blog.util.ResponseUtil;
 
@@ -54,6 +55,25 @@ public class BloggerAdminController {
 			imageFile.transferTo(new File(filePath + "static/userImages/" + imageName));
 			blogger.setImagename(imageName);
 		}
+		int resultTotal = bloggerService.updateBlogger(blogger);
+		JSONObject result = new JSONObject();
+		if(resultTotal > 0) {
+			result.put("success", true);
+		} else {
+			result.put("success", false);
+		}
+		ResponseUtil.write(response, result);
+		return null;
+	}
+	
+	//ÐÞ¸Ä²©Ö÷ÃÜÂë
+	@RequestMapping("/modifyPassword")
+	public String modifyPassword(
+			@RequestParam("password") String password,
+			HttpServletResponse response) throws Exception {
+		
+		Blogger blogger = new Blogger();
+		blogger.setPassword(CryptographyUtil.md5(password, "javacoder"));
 		int resultTotal = bloggerService.updateBlogger(blogger);
 		JSONObject result = new JSONObject();
 		if(resultTotal > 0) {

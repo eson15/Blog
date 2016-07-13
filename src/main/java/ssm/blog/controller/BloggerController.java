@@ -32,7 +32,7 @@ public class BloggerController {
 	public String login(Blogger blogger, HttpServletRequest request) {
 		
 		Subject subject = SecurityUtils.getSubject(); //获取当前登陆的主体
-		String newPassword = CryptographyUtil.md5(blogger.getPassword(), "eson_15");//将密码使用md5加密
+		String newPassword = CryptographyUtil.md5(blogger.getPassword(), "javacoder");//将密码使用md5加密
 		//将用户信息封装到token中
 		UsernamePasswordToken token = new UsernamePasswordToken(blogger.getUsername(), newPassword);
 		try {
