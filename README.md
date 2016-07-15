@@ -12,7 +12,7 @@
 
 ##**前台效果展示**
 ###**1. 博客主页显示**
-![博客主页显示](https://github.com/eson15/Blog/tree/master/src/main/readmeImages/1.jpg)
+![博客主页显示](https://github.com/eson15/Blog/raw/master/readmeImages/1.jpg)
 ###**2. 侧边栏显示**
 ![侧边栏显示](http://img.blog.csdn.net/20160715102010923)
 ###**3. 博客内容显示**
