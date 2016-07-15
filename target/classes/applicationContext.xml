@@ -18,7 +18,6 @@
 	<!-- 自动扫描包中的bean -->
 	<context:component-scan base-package="ssm.blog.*" />
 
-
 	<!-- 配置数据源，使用阿里巴巴连接池Druid -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
 		<property name="url" value="jdbc:mysql://localhost:3306/db_blog"/>
