@@ -1,5 +1,5 @@
 
-#基于springmvc+mybatis+spring+easyui+mysql的网个人博客系统项目源码
+#基于Springmvc+MyBatis+Spring+Bootstrap+EasyUI+Mysql的网个人博客系统项目源码
 ##**欢迎访问我的CSDN：http://blog.csdn.net/eson_15**
 ##**项目介绍**
 
@@ -31,5 +31,6 @@
 ###**4. 博客管理等等**
 ![这里写图片描述](http://img.blog.csdn.net/20160715103258742)
 <font size=3>后台的其他功能就不一个个展示了，都差不多。
-最后，欢迎大家关注一下我的博客：http://blog.csdn.net/eson_15
+最后，欢迎大家关注一下我的博客^_^：http://blog.csdn.net/eson_15
+点点赞啥的也是极好的~
 
