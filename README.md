@@ -1,5 +1,5 @@
 
-#基于Springmvc+MyBatis+Spring+Bootstrap+EasyUI+Mysql的网个人博客系统项目源码
+#基于Springmvc+MyBatis+Spring+Bootstrap+EasyUI+Mysql的个人博客系统项目源码
 ##**欢迎访问我的CSDN：http://blog.csdn.net/eson_15**
 ##**项目介绍**
 
