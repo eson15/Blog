@@ -21,7 +21,7 @@
 	body{
 		padding-top:60px;
 		padding-bottom:40px;
-		background-color: #F8F8FF;
+		background-color: #F5F5F5;
 		font-family: microsoft yahei;
 	}
 
