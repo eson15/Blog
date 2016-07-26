@@ -4,7 +4,7 @@
 <div class="col-md-4">
 	<div class="blog">
 		<a href="${pageContext.request.contextPath}/index.html" style="text-decoration:none">
-			<img alt="logo" src="${pageContext.request.contextPath}/static/images/logo.png">
+			<h1><strong>倪升武的博客站</strong></h1>
 		</a>
 	</div>
 </div>

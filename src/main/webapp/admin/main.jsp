@@ -16,7 +16,7 @@
 		if($("#tabs").tabs("exists",text)){
 			$("#tabs").tabs("select",text);
 		}else{
-			var content="<iframe frameborder=0 scrolling='auto' style='width:100%;height:100%' src='/admin/"+url+"'></iframe>";
+			var content="<iframe frameborder=0 scrolling='auto' style='width:100%;height:100%' src='${pageContext.request.contextPath}/admin/"+url+"'></iframe>";
 			$("#tabs").tabs("add",{
 				title:text,
 				iconCls:iconCls,
@@ -94,7 +94,7 @@
 	<table style="padding: 5px" width="100%">
 		<tr>
 			<td width="50%">
-				<img alt="logo" src="/static/images/logo.png">
+				<h2>博客后台系统</h2>
 			</td>
 			<td valign="bottom" align="right" width="50%">
 				<font size="3">&nbsp;&nbsp;<strong>欢迎：</strong>${currentUser.username }</font>
