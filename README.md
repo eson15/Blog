@@ -28,8 +28,10 @@
 ![修改博主信息](https://github.com/eson15/Blog/raw/master/readmeImages/7.jpg)
 ###**3. 写博客功能**
 ![写博客功能](https://github.com/eson15/Blog/raw/master/readmeImages/8.jpg)
-###**4. 博客管理等等**
+###**4. 博客管理**
 ![博客管理](https://github.com/eson15/Blog/raw/master/readmeImages/9.jpg)
+###**5. 添加博客类别等等**
+![博客类别](https://github.com/eson15/Blog/raw/master/readmeImages/10.jpg)
 <font size=3>后台的其他功能就不一个个展示了，都差不多。
 最后，欢迎大家star，follow一下我也是极好的~<br/>
 欢迎大家关注一下我的博客^_^：http://blog.csdn.net/eson_15/ ，
